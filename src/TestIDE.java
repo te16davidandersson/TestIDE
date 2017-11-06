@@ -1,13 +1,22 @@
+/*
+*David Andersson 6/11 2017
+*Gissa talet (1-100)
+ */
 import javax.swing.*;
 
 public class TestIDE {
     public static void main(String[] args) {
-        String aa = JOptionPane.showInputDialog(null, "Ange ett tal för att få summan.");
-        int a = Integer.parseInt(aa);
-        String bb = JOptionPane.showInputDialog(null, "Ange ett annat tal för att få summan.");
+        String bb = JOptionPane.showInputDialog(null, "Gissa heltalet (0-100)");
         int b = Integer.parseInt(bb);
-
-        int ab = a + b;
-        JOptionPane.showMessageDialog(null, "Summan: " + ab);
+        int a = (int) (Math.random()* 100);
+        if(b == a) {
+            JOptionPane.showMessageDialog(null,"Du gissade rätt");
+        }
+        else if (b < a) {
+            JOptionPane.showMessageDialog(null, "Du gissade för litet");
+        }
+        else if (b > a) {
+            JOptionPane.showMessageDialog(null, "Du gissade för stort");
+        }
     }
 }
